@@ -1,4 +1,4 @@
-$(function() {
+$(document).ready(function() {
   $(".skills-prog li")
     .find(".skills-bar")
     .each(function(i) {
