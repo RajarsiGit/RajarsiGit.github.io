@@ -30,6 +30,7 @@
         <!-- STYLESHEETS -->
         <link rel="stylesheet" type="text/css" href="assets/css/plugins.css">
         <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
         <!-- PRELOADER -->
@@ -39,7 +40,6 @@
         <!-- /PRELOADER -->
         <!-- IMAGE CONTAINER -->
         <div class="image-container">
-            <div style="background-color: #008aff; width: 100%; height: 100%; z-index: 2;"></div>
             <div class="background-img"></div>
         </div>
         <!-- /IMAGE CONTAINER -->
@@ -74,8 +74,8 @@
                 <!-- ABOUT -->
                 <section id="about">
                     <h3 class="headline scroll-animated-from-right">Why I can help you.</h3>
-                    <p class="scroll-animated-from-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper faucibus eros, quis imperdiet sapien. Nam sodales nec risus nec interdum. Proin lobortis, ex condimentum ultricies eleifend, nisl nunc sollicitudin odio, eget egestas est turpis et metus. In non ligula quis mauris rutrum porta.</p>
-                    <p class="scroll-animated-from-right">Duis consectetur massa sit amet nibh rhoncus, at pharetra ligula aliquet. Ut ac velit vestibulum, eleifend diam ut, malesuada nisi. Sed vel felis vitae diam luctus commodo. Nunc ipsum est, vulputate id orci ac, luctus consectetur sapien.</p>
+                    <p class="scroll-animated-from-right">I have over 2 years of graphic designing experience and also little over a month of UI/UX design experience. I have worked with numerous comapnies for producing good graphic designs for all sorts of products.</p>
+                    <p class="scroll-animated-from-right">Further I have experience in Web Developement as I have worked on several small projects and also a University project. With this I would like you to know that I am very dedicated and also I hardly fail to meet deadlines. I can give that extra push required to finish off a project within tight deadlines. Further, you won't have a problem working with me.</p>
                 </section>
                 <!-- /ABOUT -->
                 <!-- SERVICE -->
@@ -103,8 +103,8 @@
                                 <div class="info">
                                     <!-- CONTAINER MID -->
                                     <div class="container-mid">
-                                        <h5>Fashion Inc.</h5>
-                                        <p>Web Design</p>
+                                        <h5>Login System using Face Recognition</h5>
+                                        <p>Machine Learning</p>
                                     </div>
                                     <!-- /CONTAINER MID -->
                                 </div>
@@ -115,9 +115,9 @@
                             <!-- LIGHTBOX -->
                             <div id="item-1-lightbox" class="work-lightbox">
                                 <img class="img-responsive" src="assets/img/work/item-1.jpg" alt="image">
-                                <h3>Fashion Inc.</h3>
-                                <p class="subline">Web Design</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper faucibus eros, quis imperdiet sapien. Nam sodales nec risus nec interdum. Proin lobortis, ex condimentum ultricies eleifend, nisl nunc sollicitudin odio, eget egestas est turpis et metus. In non ligula quis mauris rutrum porta.</p>
+                                <h3>Login System using Face Recognition</h3>
+                                <p class="subline">Machine Learning</p>
+                                <p>Made a prototype login system solely based on face recognition. It first requires one to register his/her face and then he/she can login by looking at the camera of the device being used to access the system.</p>
                             </div>
                             <!-- /LIGHTBOX -->
                         </div>
@@ -130,8 +130,8 @@
                                 <div class="info">
                                     <!-- CONTAINER MID -->
                                     <div class="container-mid">
-                                        <h5>Asimov 71</h5>
-                                        <p>Product Design</p>
+                                        <h5>Homvery</h5>
+                                        <p>Graphic Design</p>
                                     </div>
                                     <!-- /CONTAINER MID -->
                                 </div>
@@ -142,9 +142,9 @@
                             <!-- LIGHTBOX -->
                             <div id="item-2-lightbox" class="work-lightbox">
                                 <img class="img-responsive" src="assets/img/work/item-2.jpg" alt="image">
-                                <h3>Asimov 71</h3>
-                                <p class="subline">Product Design</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper faucibus eros, quis imperdiet sapien. Nam sodales nec risus nec interdum. Proin lobortis, ex condimentum ultricies eleifend, nisl nunc sollicitudin odio, eget egestas est turpis et metus. In non ligula quis mauris rutrum porta.</p>
+                                <h3>Homvery</h3>
+                                <p class="subline">Graphic Design</p>
+                                <p>Conceptualized and developed graphics products for posters, and other merchadise using Adobe Photoshop, Adobe Illustrator.</p>
                             </div>
                             <!-- /LIGHTBOX -->
                         </div>
@@ -223,9 +223,11 @@
                         <!-- PHANTOM ELEMENT ( HONEYPOT CAPTCHA FOR SECURITY ) -->
                         <div class="fhp-input"><input id="contact-form-company" type="text" name="company" class="form-control"></div>
                         <!-- /PHANTOM ELEMENT ( HONEYPOT CAPTCHA FOR SECURITY ) -->
-                        <textarea id="contact-form-message" name="message" class="form-control scroll-animated-from-right" placeholder="Your Message"></textarea>                       
+                        <textarea id="contact-form-message" name="message" class="form-control scroll-animated-from-right" placeholder="Your Message"></textarea>
+                        <div id="g-recaptcha" class="g-recaptcha" data-sitekey="6Le7zM0ZAAAAAIgS5OTAf1UG-Y_sTa6oMVXS3CKe"></div>
+                        <br/>                      
                         <button type="submit" class="form-control scroll-animated-from-right">Send Mail</button>
-                        <div class="success-message">* The Email was Sent Successfully!</div>
+                        <div class="success-message">The Email was Sent Successfully!</div>
                     </form>
                     <!-- /CONTACT FORM -->
                 </section>
@@ -240,7 +242,7 @@
                         <li><a href="https://www.linkedin.com/in/rajarsi-saha-2709a297/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>                       
                     </ul>
                     <!-- /SOCIAL ICONS -->
-                    <p class="scroll-animated-from-right">© Rajarsi Saha &nbsp; | &nbsp; <a href="https://rajarsi.pb.online">My portfolio</a></p>
+                    <p class="scroll-animated-from-right">© Rajarsi Saha &nbsp; | &nbsp; <a href="https://rajarsi.pb.online"><b>My portfolio</b></a></p>
                 </section>
                 <!-- /FOOTER -->
             </div>

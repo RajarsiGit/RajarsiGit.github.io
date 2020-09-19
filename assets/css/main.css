@@ -247,6 +247,7 @@ a:hover
     background: url(../img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 @media (max-width:1200px)
@@ -548,34 +549,92 @@ a:hover
 
 #service .services-list
 {
+    font-size: 2.4rem;
+    line-height: 3em;
     margin-bottom: 0;
     padding: 0;
 
     list-style: none;
 }
 
-#service .services-list li
-{
-    font-size: 2.4rem;
-    line-height: 3.4em;
-}
-
 #service .services-list li i
 {
-    font-size: 2rem;
-    line-height: 3em;
-
-    width: 3em;
-    height: 3em;
+    position: relative;
+    margin-bottom: 2em;
     margin-right: 1.5em;
 
     text-align: center;
+    padding-right: 1.5em;
+
+    display: inline-block;
+    overflow: visible;
 
     color: #fff;
+
+    margin: 0;
+}
+
+#service .services-list li
+{
+    cursor: pointer;
+    position: relative;
+
+    width: 100%;
+    height: 3em;
+    margin-right: 1.5em;
+    margin-bottom: 2em;
+
+    text-align: center;
+
+    display: block;
+    overflow: hidden;
+
+    color: #fff;
+    border-radius: 100px;
+    background: none;
+}
+
+#service .services-list li:before
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3em;
+    margin-right: 1.5em;
+    margin-bottom: 2em;
+
+    content: '';
+
     border-radius: 100px;
     background: #111;
 }
 
+#service .services-list li:after
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 3em;
+    margin-right: 1.5em;
+
+    content: '';
+    -webkit-transition: .2s ease;
+         -o-transition: .2s ease;
+            transition: .2s ease;
+    
+    background: #008aff;
+}
+
+#service .services-list li:hover:after
+{
+    width: 100%;
+}
 
 
 /** 8. Content Area --> Work
