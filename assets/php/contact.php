@@ -24,7 +24,7 @@
             echo "<script type='text/javascript'>alert('Sorry! Please try again!');</script>";
             exit;
         }
-        $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6Le7zM0ZAAAAAAzQtQ8WqsAxg8ijee6o_WL62I2h&response=" . $captcha . "&remoteip="  . $_SERVER['REMOTE_ADDR']), true);
+        $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LetDs4ZAAAAANzp1jXyVBifmWHQUjpcHwA9W-1H&response=" . $captcha . "&remoteip="  . $_SERVER['REMOTE_ADDR']), true);
         if($name != "" && filter_var($clientEmail, FILTER_VALIDATE_EMAIL) && $message != "" && $fhp_input == "" && $response['success'] == true) {
             $array["succesMessage"] = "";
             $headers  = "MIME-Version: 1.0" . "\r\n";
