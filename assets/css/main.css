@@ -579,10 +579,9 @@ a:hover
     cursor: pointer;
     position: relative;
 
-    width: 100%;
+    width: 60%;
     height: 3em;
-    margin-right: 1.5em;
-    margin-bottom: 2em;
+    margin: 0 auto 2em auto;
 
     text-align: center;
 
