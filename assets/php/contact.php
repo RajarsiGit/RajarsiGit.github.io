@@ -2,7 +2,7 @@
     // ENTER YOUR EMAIL
     $emailTo = "rajarsi3997@gmail.com";
     // ENTER IDENTIFIER
-    $emailIdentifier =  "Resume Message";
+    $emailIdentifier =  "Message fron Resume Website";
     if($_POST) {
         $name = addslashes(trim($_POST["name"]));
         $clientEmail = addslashes(trim($_POST["email"]));
@@ -24,13 +24,13 @@
             echo "<script type='text/javascript'>alert('Sorry! Please try again!');</script>";
             exit;
         }
-        $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LetDs4ZAAAAANzp1jXyVBifmWHQUjpcHwA9W-1H&response=" . $captcha . "&remoteip="  . $_SERVER['REMOTE_ADDR']), true);
+        $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LcJkOsZAAAAAJlhIdbRa40ltSuVSNk0kLNcQAiz&response=" . $captcha . "&remoteip="  . $_SERVER['REMOTE_ADDR']), true);
         if($name != "" && filter_var($clientEmail, FILTER_VALIDATE_EMAIL) && $message != "" && $fhp_input == "" && $response['success'] == true) {
             $array["succesMessage"] = "";
             $headers  = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            $headers .= "From: " . $clientEmail . "\r\n";
-            $headers .= "Reply-To: " . $clientEmail;
+            $headers .= "From: " . $name . " " . $clientEmail . "\r\n";
+            $headers .= "Reply-To: " . $name . " " . $clientEmail;
             if(!mail($emailTo, $emailIdentifier, $message, $headers)){
                 $array["succesMessage"] = "x";
             }
