@@ -40,6 +40,7 @@ jQuery(document).ready(function($) {
     $("#contact-form").submit(function(e) {
         e.preventDefault();
         var postdata = $(this).serialize();
+        console.log(postdata);
         $.ajax({
             type: "POST",
             url: "assets/php/contact.php",
@@ -61,10 +62,28 @@ jQuery(document).ready(function($) {
                 if (json.nameMessage === "" && json.emailMessage === "" && json.messageMessage === "") {
                     $("#contact-form.error input, #contact-form.error textarea").removeClass("error");
                     $('#contact-form').addClass("success");
-                    $('#contact-form textarea, #contact-form input').attr("placeholder","");
+                    $('#contact-form textarea, #contact-form input').attr("placeholder", "");
                     $('#contact-form input, #contact-form button, #contact-form textarea').val('').prop('disabled', true);
                     $('#g-recaptcha').hide();
                 }
+            },
+            error: function() {
+                Email.send({
+                    Host: "smtp.gmail.com",
+                    Username: "rajarsi3997@gmail.com",
+                    Password: "nhdzeykclnnhkrau",
+                    To: 'receiver@email_address.com',
+                    From: "sender@email_address.com",
+                    Subject: "Sending Email using javascript",
+                    Body: "Well that was easy!!"
+                })
+                .then(function (message) {
+                    $("#contact-form input, #contact-form textarea").removeClass("error");
+                    $('#contact-form').addClass("success");
+                    $('#contact-form textarea, #contact-form input').attr("placeholder", "");
+                    $('#contact-form input, #contact-form button, #contact-form textarea').val('').prop('disabled', true);
+                    $('#g-recaptcha').hide();
+                });
             }
         });
     });
