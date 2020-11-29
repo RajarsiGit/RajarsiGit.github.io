@@ -9,7 +9,8 @@
         $message = addslashes(trim($_POST["message"]));
         $fhp_input = addslashes(trim($_POST["company"]));
         if(isset($_POST['g-recaptcha-response']))
-            $captcha=$_POST['g-recaptcha-response'];
+            $captcha = $_POST['g-recaptcha-response'];
+        print_r($captcha);
         $array = array("nameMessage" => "", "emailMessage" => "", "messageMessage" => "", "succesMessage" => "");
         if($name == "") {
             $array["nameMessage"] = "x";
