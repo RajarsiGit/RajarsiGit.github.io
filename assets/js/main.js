@@ -60,8 +60,11 @@ jQuery(document).ready(function($) {
                     if (json.messageMessage !== "") {
                         $("#contact-form-message").addClass("error");
                     }
+                    if (json.captchaMessage !== "") {
+                        alert("Please check I'm not a robot!")
+                    }
                 }, 10);
-                if (json.nameMessage === "" && json.emailMessage === "" && json.messageMessage === "") {
+                if (json.nameMessage === "" && json.emailMessage === "" && json.messageMessage === "" && json.captchaMessage === "") {
                     $("#contact-form.error input, #contact-form.error textarea").removeClass("error");
                     $('#contact-form').addClass("success");
                     $('#contact-form textarea, #contact-form input').attr("placeholder", "");
@@ -69,7 +72,8 @@ jQuery(document).ready(function($) {
                     $('#g-recaptcha').hide();
                 }
             },
-            error: function() {
+            error: function(json) {
+                console.log(json);
                 Email.send({
                     Host: "smtp.gmail.com",
                     Username: "rajarsi3997@gmail.com",

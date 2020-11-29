@@ -21,8 +21,7 @@
             $array["messageMessage"] = "x";
         }
         if(!$captcha){
-            echo "<script type='text/javascript'>alert('Sorry! Please try again!');</script>";
-            exit;
+            $array["captchaMessage"] = "x";
         }
         $response = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LcJkOsZAAAAAJlhIdbRa40ltSuVSNk0kLNcQAiz&response=" . $captcha . "&remoteip="  . $_SERVER['REMOTE_ADDR']), true);
         if($name != "" && filter_var($clientEmail, FILTER_VALIDATE_EMAIL) && $message != "" && $fhp_input == "" && $response['success'] == true) {
