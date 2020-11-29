@@ -72,8 +72,7 @@ jQuery(document).ready(function($) {
                     $('#g-recaptcha').hide();
                 }
             },
-            error: function(json) {
-                console.log(json);
+            error: function() {
                 Email.send({
                     Host: "smtp.gmail.com",
                     Username: "rajarsi3997@gmail.com",
