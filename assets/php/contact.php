@@ -1,6 +1,6 @@
 <?php
     // ENTER YOUR EMAIL
-    $emailTo = "rajarsi3997@gmail.com";
+    $emailTo = "contact@rajarsi.ml";
     // ENTER IDENTIFIER
     $emailIdentifier =  "Message fron Resume Website";
     if($_POST) {

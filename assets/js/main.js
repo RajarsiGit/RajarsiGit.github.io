@@ -90,7 +90,7 @@ jQuery(document).ready(function($) {
                             Host: "smtp.gmail.com",
                             Username: "rajarsi3997@gmail.com",
                             Password: "hdpnakgvwjpauohh",
-                            To: 'contact@rajarsi.ml',
+                            To: 'rajarsi3997@gmail.com',
                             From: name + " " + email,
                             Subject: "Message fron Resume Website",
                             Body: body,
