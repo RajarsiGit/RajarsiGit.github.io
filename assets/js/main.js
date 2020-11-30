@@ -40,28 +40,29 @@ jQuery(document).ready(function($) {
     $("#contact-form").submit(function(e) {
         e.preventDefault();
         var postdata = $(this).serialize();
+        var url = $(this).attr('action');
         var name = $('#contact-form-name').val();
         var email = $('#contact-form-email').val();
         var body = $('#contact-form-message').val();
         $.ajax({
             type: "POST",
-            url: "assets/php/contact.php",
+            url: url,
             data: postdata,
             dataType: "json",
             success: function(json) {
                 $("#contact-form input, #contact-form textarea").removeClass("error");
                 setTimeout(function(){
-                    if (json.nameMessage !== "") {
+                    if (json.nameMessage === "x") {
                         $("#contact-form-name").addClass("error");
                     }
-                    if (json.emailMessage !== "") {
+                    if (json.emailMessage === "x") {
                         $("#contact-form-email").addClass("error");
                     }
-                    if (json.messageMessage !== "") {
+                    if (json.messageMessage === "x") {
                         $("#contact-form-message").addClass("error");
                     }
-                    if (json.captchaMessage !== "") {
-                        alert("Please check I'm not a robot!")
+                    if (json.captchaMessage === "x") {
+                        alert("Please check I'm not a robot!");
                     }
                 }, 10);
                 if (json.nameMessage === "" && json.emailMessage === "" && json.messageMessage === "" && json.captchaMessage === "") {
@@ -73,22 +74,36 @@ jQuery(document).ready(function($) {
                 }
             },
             error: function() {
-                Email.send({
-                    Host: "smtp.gmail.com",
-                    Username: "rajarsi3997@gmail.com",
-                    Password: "nhdzeykclnnhkrau",
-                    To: "rajarsi3997@gmail.com",
-                    From: name + " " + email,
-                    Subject: "Message fron Resume Website",
-                    Body: body
-                })
-                .then(function (message) {
-                    $("#contact-form input, #contact-form textarea").removeClass("error");
-                    $('#contact-form').addClass("success");
-                    $('#contact-form textarea, #contact-form input').attr("placeholder", "");
-                    $('#contact-form input, #contact-form button, #contact-form textarea').val('').prop('disabled', true);
-                    $('#g-recaptcha').hide();
-                });
+                $("#contact-form input, #contact-form textarea").removeClass("error");
+                setTimeout(function(){
+                    if (name === "") {
+                        $("#contact-form-name").addClass("error");
+                    }
+                    if (email === "") {
+                        $("#contact-form-email").addClass("error");
+                    }
+                    if (body === "") {
+                        $("#contact-form-message").addClass("error");
+                    }
+                    if (name !== "" && email !== "" && body !== "") {
+                        Email.send({
+                            Host: "smtp-pulse.com",
+                            Username: "rajarsi3997@gmail.com",
+                            Password: "n8p9aEpZbMQgK",
+                            To: 'contact@rajarsi.ml',
+                            From: name + " " + email,
+                            Subject: "Message fron Resume Website",
+                            Body: body,
+                        })
+                        .then(function (message) {
+                            $("#contact-form.error input, #contact-form.error textarea").removeClass("error");
+                            $('#contact-form').addClass("success");
+                            $('#contact-form textarea, #contact-form input').attr("placeholder", "");
+                            $('#contact-form input, #contact-form button, #contact-form textarea').val('').prop('disabled', true);
+                            $('#g-recaptcha').hide();
+                        });
+                    }
+                }, 10);
             }
         });
     });
