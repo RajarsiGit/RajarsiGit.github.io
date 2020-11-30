@@ -87,9 +87,9 @@ jQuery(document).ready(function($) {
                     }
                     if (name !== "" && email !== "" && body !== "") {
                         Email.send({
-                            Host: "smtp-pulse.com",
+                            Host: "smtp.gmail.com",
                             Username: "rajarsi3997@gmail.com",
-                            Password: "n8p9aEpZbMQgK",
+                            Password: "hdpnakgvwjpauohh",
                             To: 'contact@rajarsi.ml',
                             From: name + " " + email,
                             Subject: "Message fron Resume Website",
