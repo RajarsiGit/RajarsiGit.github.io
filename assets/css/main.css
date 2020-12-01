@@ -42,7 +42,13 @@ body
     color: #000;
     background: #fff;
 
-    -webkit-font-smoothing: antialiased;
+    scrollbar-width: none;
+	-ms-overflow-style: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 h1,
