@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 	"use strict";
     // SMOOTH SCROLL FOR SAME PAGE LINKS
     $(document).on('click', 'a.smooth-scroll', function(event) {
-        event.preventDefault();
+        // event.preventDefault();
         $('html, body').animate({
             scrollTop: $( $.attr(this, 'href') ).offset().top - 80
         }, 500);
@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
     
     // AJAX CONTACT FORM SUBMIT
     $("#contact-form").submit(function(e) {
-        e.preventDefault();
+        // e.preventDefault();
         var postdata = $(this).serialize();
         var url = $(this).attr('action');
         var name = $('#contact-form-name').val();
