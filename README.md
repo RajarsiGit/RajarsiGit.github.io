@@ -1,8 +1,8 @@
 <h1 align="center">Hi 👋, I'm Rajarsi Saha</h1>
 <h3 align="center">
-    A passionate software developer from India
+    A passionate Lead Engineer from India
     </br>
-    <h4>Currently working as a Software Engineer at SysCloud Technologies, India
+    <h4>Currently working as a Lead Engineer at SysCloud Technologies, India
     </h4>
 </h3>
 
